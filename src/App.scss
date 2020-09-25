@@ -1,0 +1,203 @@
+$blue: #1877f2;
+$green: #42b72a;
+$paragraph-margin-bottom: 0;
+$border-radius: 0;
+$gray-600: rgb(245,245,245);
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    203deg,
+    rgba(131, 58, 180, 0.9) 0%,
+    rgba(253, 29, 29, 0.9) 50%,
+    rgba(252, 176, 69, 0.9) 100%
+  );
+}
+
+.user-div:hover {
+  background-color: rgb(250,250,250);
+}
+
+.messages-box {
+  height: 500px;
+  overflow-y: scroll;
+
+  scrollbar-width:  none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+.message-input::placeholder {
+  color: rgba(0,0,0,0.5)
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .messages-row {
+    flex-grow: 1;
+    height: 95%;
+  }
+  .message-box-parent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .messages-box {
+      height: 100%;
+      flex-grow: 1;
+    }
+  }
+}
+
+.info-text { 
+   color: rgba(0,0,0, 0.5);
+   text-align: center;
+   margin-bottom: 0.5rem;
+}
+
+.other-video-container {
+  position: fixed;
+  top: 0;
+  left: 6px;
+  background-color: black;
+  height: 100vh;
+  width: 99%;
+  video {
+    object-fit: cover;
+    height: 300px;
+    // transform: scaleX(-1);
+    height: 100vh;
+    width: 99%;
+  }
+}
+
+.local-video-container {
+      /* overflow: hidden; */
+      left: 11px;
+      width: 161px;
+      height: 112px;
+      position: fixed;
+      bottom: 9px;
+      z-index: 1;
+      video {
+        bottom: 9px;
+        height: 121px;
+        
+        transform: scaleX(-1);
+      }
+}
+.buttons-parent-div {
+    color: white;
+    bottom: 46px;
+    justify-content: center;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    z-index: 2;
+    font-size: 24px;
+}
+.buttons-div {
+  z-index: 2;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-video-remote {
+  background-image: url("./assets/background.svg");
+  background-position: center center;
+  background-size: 43% !important;
+  background-repeat: no-repeat;
+  video {
+    display: none;
+  }
+}
+
+.extra-local-class {
+  background-image: url("./assets/background.svg");
+  background-position: center center;
+  background-size: 43% !important;
+  background-repeat: no-repeat;
+  video {
+    display: none;
+  }
+}
+
+.no-parti-text {
+  position: absolute;
+  color: white;
+  text-align: center;
+  top: 45%;
+  margin: 0 29%;
+  font-size: 21px;
+}
+
+.main-container {
+  height: 100vh;
+  background: black;
+}
+
+.speech-text {
+  position: fixed;
+  font-size: 12px;
+  color: white;
+  font-size: 20px;
+}
+
+.react-button-popover {
+  height: 30px;
+}
+
+.react-icon-btn {
+  padding: 0 0.25rem;
+  font-size: 1rem;
+  transition: 0.25s;
+  &:hover {
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.reactions-div {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  font-size: 0.7rem;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.btn-disabled {
+  pointer-events: none;
+  color: gray;
+  opacity: 0.4;
+}
+
+.main-logo {
+  font-family: 'Kaushan Script', cursive;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 49px;
+}
