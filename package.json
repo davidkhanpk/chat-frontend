@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.2",
     "classnames": "^2.2.6",
-    "google-translate-api": "^2.3.0",
     "graphql": "^15.3.0",
     "jwt-decode": "^2.2.0",
     "liowebrtc": "^0.2.16",
@@ -26,7 +25,6 @@
     "socket.io-client": "^2.3.0",
     "styled-components": "^5.2.0",
     "subscriptions-transport-ws": "^0.9.18",
-    "translate-google": "^1.4.3",
     "uuid": "^8.3.0"
   },
   "scripts": {
