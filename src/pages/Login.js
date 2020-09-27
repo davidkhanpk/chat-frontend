@@ -39,11 +39,11 @@ export default function Register(props) {
   }
 
   return (
-    <Row className="bg-white py-5 justify-content-center">
+    <Row className="bg-white py-5 justify-content-center form-main-div">
       <Col sm={8} md={6} lg={4}>
         <p class="main-logo text-primary">jessillaine</p>
         <h1 className="text-center">Login</h1>
-        <Form onSubmit={submitLoginForm}>
+        <Form className="login-form" onSubmit={submitLoginForm}>
           <Form.Group>
             <Form.Label className={errors.username && 'text-danger'}>
               {errors.username ?? 'Username'}
@@ -70,7 +70,7 @@ export default function Register(props) {
               }
             />
           </Form.Group>
-          <div className="text-center">
+          <div className="login-button text-center">
             <Button variant="success" type="submit" disabled={loading}>
               {loading ? 'loading..' : 'Login'}
             </Button>

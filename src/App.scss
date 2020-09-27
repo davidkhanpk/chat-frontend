@@ -2,38 +2,85 @@ $blue: #1877f2;
 $green: #42b72a;
 $paragraph-margin-bottom: 0;
 $border-radius: 0;
-$gray-600: rgb(245,245,245);
+$gray-600: rgb(245, 245, 245);
 
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 body {
   min-height: 100vh;
-  background: linear-gradient(
-    203deg,
-    rgba(131, 58, 180, 0.9) 0%,
-    rgba(253, 29, 29, 0.9) 50%,
-    rgba(252, 176, 69, 0.9) 100%
-  );
+  background: white;
 }
 
+#root {
+  height: 100vh;
+}
+
+.tabs-col {
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  background: white;
+  height: 60px;
+}
+
+.tab-nav-item {
+  text-align: center;
+  width: 50%;
+}
+
+.nav-item-link {
+  height: 59px;
+}
+
+.login-form,
+.register-form {
+  margin-top: 35px;
+}
+
+.login-form input,
+.register-form input {
+  font-size: 18px;
+  padding: 0 20px;
+  border-radius: 20px;
+  height: 50px;
+}
+
+.login-button button,
+.register-button button {
+  border-radius: 30px;
+  width: 203px;
+  margin-bottom: 10px;
+}
+
+.login-button small,
+.register-button small {
+  font-size: 14px;
+}
+
+.login-form label,
+.register-form label {
+  font-size: 18px;
+}
+
+.form-main-div {
+  height: 100%;
+}
 .user-div:hover {
-  background-color: rgb(250,250,250);
+  background-color: rgb(250, 250, 250);
 }
 
 .messages-box {
-  height: 500px;
   overflow-y: scroll;
-
-  scrollbar-width:  none;
+  flex-grow: 1;
+  scrollbar-width: none;
 
   &::-webkit-scrollbar {
     display: none;
   }
-
 }
 
 .message-input::placeholder {
-  color: rgba(0,0,0,0.5)
+  color: rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 768px) {
@@ -58,10 +105,10 @@ body {
   }
 }
 
-.info-text { 
-   color: rgba(0,0,0, 0.5);
-   text-align: center;
-   margin-bottom: 0.5rem;
+.info-text {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .other-video-container {
@@ -81,29 +128,29 @@ body {
 }
 
 .local-video-container {
-      /* overflow: hidden; */
-      left: 11px;
-      width: 161px;
-      height: 112px;
-      position: fixed;
-      bottom: 9px;
-      z-index: 1;
-      video {
-        bottom: 9px;
-        height: 121px;
-        
-        transform: scaleX(-1);
-      }
+  /* overflow: hidden; */
+  left: 11px;
+  width: 161px;
+  height: 112px;
+  position: fixed;
+  bottom: 9px;
+  z-index: 1;
+  video {
+    bottom: 9px;
+    height: 121px;
+
+    transform: scaleX(-1);
+  }
 }
 .buttons-parent-div {
-    color: white;
-    bottom: 46px;
-    justify-content: center;
-    position: fixed;
-    display: flex;
-    width: 100%;
-    z-index: 2;
-    font-size: 24px;
+  color: white;
+  bottom: 46px;
+  justify-content: center;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  z-index: 2;
+  font-size: 24px;
 }
 .buttons-div {
   z-index: 2;
@@ -141,11 +188,12 @@ body {
   color: white;
   text-align: center;
   top: 45%;
-  margin: 0 29%;
+  margin: 0 32.8%;
   font-size: 21px;
 }
 
 .main-container {
+  margin: 0 -15px;
   height: 100vh;
   background: black;
 }
@@ -182,6 +230,55 @@ body {
   font-size: 0.7rem;
 }
 
+// .send-form-div {
+//     position: absolute;
+//     width: 96%;
+//     bottom: 0;
+// }
+
+.flex-main-div {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 0;
+}
+
+.message-inner-div {
+  padding: 0 15px;
+}
+
+.message-box-header {
+  height: 65px;
+  width: 108%;
+  background-color: #1877f2 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 12px;
+  margin: 0 -15px;
+  margin-bottom: 5px;
+  .vid-icon-div {
+    padding: 0 15px;
+    color: white;
+    font-size: 25px;
+  }
+  .left-portion-div {
+    display: flex;
+    align-items: center;
+    .back-btn {
+      color: white;
+      font-size: 20px;
+    }
+    .top-image-div {
+      margin: 0 12px;
+    }
+    .top-name-div {
+      color: white;
+      font-size: 22px;
+    }
+  }
+}
+
 .user-image {
   width: 50px;
   height: 50px;
@@ -196,7 +293,7 @@ body {
 }
 
 .main-logo {
-  font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
   text-align: center;
   font-size: 50px;
   margin-bottom: 49px;

@@ -59,23 +59,10 @@ export default function Register(props) {
   }
 
   return (
-    <Row className="bg-white py-5 justify-content-center">
+    <Row className="bg-white py-5 justify-content-center form-main-div">
       <Col sm={8} md={6} lg={4}>
         <h1 className="text-center">Register</h1>
-        <Form onSubmit={submitRegisterForm}>
-          <Form.Group>
-            <Form.Label className={errors.email && 'text-danger'}>
-              {errors.email ?? 'Email address'}
-            </Form.Label>
-            <Form.Control
-              type="email"
-              value={variables.email}
-              className={errors.email && 'is-invalid'}
-              onChange={(e) =>
-                setVariables({ ...variables, email: e.target.value })
-              }
-            />
-          </Form.Group>
+        <Form className="register-form" onSubmit={submitRegisterForm}>
           <Form.Group>
             <Form.Label className={errors.username && 'text-danger'}>
               {errors.username ?? 'Username'}
@@ -86,6 +73,19 @@ export default function Register(props) {
               className={errors.username && 'is-invalid'}
               onChange={(e) =>
                 setVariables({ ...variables, username: e.target.value })
+              }
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label className={errors.email && 'text-danger'}>
+              {errors.email ?? 'Email address'}
+            </Form.Label>
+            <Form.Control
+              type="email"
+              value={variables.email}
+              className={errors.email && 'is-invalid'}
+              onChange={(e) =>
+                setVariables({ ...variables, email: e.target.value })
               }
             />
           </Form.Group>
@@ -128,7 +128,7 @@ export default function Register(props) {
               }
             />
           </Form.Group>
-          <div className="text-center">
+          <div className="text-center register-button">
             <Button variant="success" type="submit" disabled={loading}>
               {loading ? 'loading..' : 'Register'}
             </Button>

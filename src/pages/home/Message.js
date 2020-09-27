@@ -60,7 +60,7 @@ export default function Message ({message}) {
         </OverlayTrigger>
 
     return (
-        <div className={classNames('d-flex my-3', {
+        <div className={classNames('d-flex my-3 message-inner-div', {
             'ml-auto' : sent,
             'mr-auto': received
         })}>
