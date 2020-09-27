@@ -124,10 +124,11 @@ class Party extends Component {
 
   disconnect = () => {
     if (this.webrtc) {
+      this.webrtc.stopLocalVideo();
       this.webrtc.leaveRoom();
       this.webrtc.quit();
     } else {
-      this.props.history.push("/");
+      window.location.href = "/";
     }
   };
   handlePeerData = (type, payload) => {
@@ -186,7 +187,7 @@ class Party extends Component {
       },
       () => {
         this.disconnect();
-        this.props.history.push("/");
+        window.location.href = "/";
       }
     );
   };
