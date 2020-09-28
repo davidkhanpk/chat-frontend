@@ -31,6 +31,7 @@ const host = window.location.host;
 const wsLink = new WebSocketLink({
   uri: `wss://jessillaine.herokuapp.com/`,
   options: {
+    // com
     reconnect: true,
     connectionParams: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
