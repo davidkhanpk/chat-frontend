@@ -11,7 +11,7 @@ import { AuthProvider } from "./context/auth";
 import { MessageProvider } from "./context/message";
 import DynamicRoute from "./utils/DynamicRoute";
 import Messages from "./pages/home/Messages";
-import "webrtc-adapter";
+// import "webrtc-adapter";
 
 function App() {
   return (
