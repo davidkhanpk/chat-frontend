@@ -26,6 +26,7 @@ const Speech = ({ audio, onShout, incomingSpeech }) => {
     onCompleted(data) {
       console.log(data);
       onShout(data.String);
+      resetTranscript();
       // webrtc.shout("speech", data.string);
     },
   });
