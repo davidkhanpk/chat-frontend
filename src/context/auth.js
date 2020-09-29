@@ -4,7 +4,7 @@ const AuthStateContext = createContext();
 const AuthDispatchContext = createContext();
 
 let user = null;
-let currentUser = null;
+// let currentUser = null;
 const token = localStorage.getItem("token");
 if (token) {
   const decodedToken = jwtDecode(token);

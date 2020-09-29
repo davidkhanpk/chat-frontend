@@ -191,8 +191,9 @@ class Party extends Component {
       }
     );
   };
-  handleShout() {
-    this.webrtc.shout("speech", data.string);
+  handleShout(data) {
+    console.log(data);
+    this.webrtc.shout("speech", data);
   }
 
   render() {
