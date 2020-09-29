@@ -25,7 +25,8 @@
     "socket.io-client": "^2.3.0",
     "styled-components": "^5.2.0",
     "subscriptions-transport-ws": "^0.9.18",
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.0",
+    "webrtc-adapter": "^7.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
