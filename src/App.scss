@@ -153,6 +153,7 @@ body {
   font-size: 24px;
 }
 .buttons-div {
+  margin: 0 20px;
   z-index: 2;
   height: 50px;
   width: 50px;
@@ -297,4 +298,55 @@ body {
   text-align: center;
   font-size: 50px;
   margin-bottom: 49px;
+}
+
+.modal-dialog {
+  height: 100%;
+  margin: 0;
+  .modal-content {
+    height: 100%;
+    .modal-body {
+      padding: 0;
+    }
+    .call-text-div {
+      height: 100%;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    video {
+      z-index: 0;
+      opacity: 0.5;
+      top: 0;
+      position: absolute;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+    .main-buttons-div {
+      display: flex;
+    }
+  }
+}
+
+.local-video-div {
+  video {
+    position: absolute;
+    height: 300px;
+    width: 150px;
+    z-index: 2;
+    object-fit: cover;
+  }
+}
+
+.remote-video-div {
+  video {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    z-index: 2;
+    object-fit: cover;
+  }
 }

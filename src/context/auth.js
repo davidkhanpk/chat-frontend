@@ -39,6 +39,16 @@ const authReducer = (state, action) => {
         ...state,
         currentUser: action.payload,
       };
+    case "SET_CURRENT_CALLER":
+      return {
+        ...state,
+        currentCaller: action.payload,
+      };
+    case "SET_CURRENT_CALLE":
+      return {
+        ...state,
+        currentCalle: action.payload,
+      };
     default:
       throw new Error(`Unknown action type: ${action.type}`);
   }

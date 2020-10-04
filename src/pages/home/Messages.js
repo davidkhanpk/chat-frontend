@@ -3,7 +3,7 @@ import { gql, useLazyQuery, useMutation } from "@apollo/client";
 import { Col, Form, Image } from "react-bootstrap";
 import { useMessageDispatch, useMessageState } from "../../context/message";
 import Message from "./Message";
-import { useAuthState } from "../../context/auth";
+import { useAuthDispatch } from "../../context/auth";
 
 const GET_MESSAGES = gql`
   query getMessages($from: String!) {
@@ -33,7 +33,8 @@ const SEND_MESSAGE = gql`
 `;
 
 export default function Messages({ history }) {
-  const { user } = useAuthState();
+  // const { user } = useAuthState();
+  const authDispatch = useAuthDispatch();
   const { users } = useMessageState();
   const dispatch = useMessageDispatch();
   const [content, setContent] = useState("");
@@ -69,11 +70,14 @@ export default function Messages({ history }) {
     }
   }, [messagesData]);
   const startVideoCall = () => {
-    let otherUserName = username;
-    let currentname = user.username;
-    let roomName = [otherUserName, currentname].sort().join(":");
-    roomName = roomName.replace(/\s/g, "");
-    history.push(`/video-chat/${roomName}`);
+    // let otherUserName = username;
+    // let currentname = user.username;
+    // let roomName = [otherUserName, currentname].sort().join(":");
+    // roomName = roomName.replace(/\s/g, "");
+    // history.push(`/video-chat/${roomName}`);
+    console.log(selectedUser)
+    authDispatch({ type: "SET_CURRENT_CALLE", payload: selectedUser });
+    history.push(`/video-call?isOutgoingCall=true`);
   };
   const submitMessage = (e) => {
     e.preventDefault();

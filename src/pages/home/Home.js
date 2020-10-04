@@ -3,6 +3,7 @@ import { gql, useSubscription, useQuery } from "@apollo/client";
 
 import { useAuthDispatch, useAuthState } from "../../context/auth";
 import { useMessageDispatch } from "../../context/message";
+import { useSocketState } from "../../context/socket";
 import Tabs from "../../utils/Tabs";
 
 const GET_USER = gql`
@@ -46,10 +47,24 @@ export default function Home({ history }) {
   const authDispatch = useAuthDispatch();
   const messageDispatch = useMessageDispatch();
   const { user } = useAuthState();
+  const socket  = useSocketState()
+  useEffect(() => {
+    console.log(socket)
+    socket.on("incomingCall", (data) => {
+      console.log("in coming call")
+      console.log(data)
+      authDispatch({ type: "SET_CURRENT_CALLER", payload: data });
+      history.push('/video-call?isIncomingCall=true');
+    })
+  }, [])
   const { loading } = useQuery(GET_USER, {
     onCompleted: (data) => {
-      console.log(data);
-      authDispatch({ type: "SET_CURRENT_USER", payload: data.getUser });
+      let userData = data.getUser;
+      let str = JSON.stringify(userData);
+      userData = JSON.parse(str)
+      // userData.socketId = socket.id
+      authDispatch({ type: "SET_CURRENT_USER", payload: userData });
+      socket.emit('saveData', userData );
     },
     onError: (err) => console.log(err),
   });
@@ -59,7 +74,6 @@ export default function Home({ history }) {
   const { data: reactionData, error: reactionError } = useSubscription(
     NEW_REACTION
   );
-
   useEffect(() => {
     if (messageError) console.log(messageError);
     if (messageData) {
